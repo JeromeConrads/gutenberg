@@ -11,6 +11,22 @@ import argparse
 import glob
 import ast
 import pandas as pd
+import nltk
+SENT_DETECTOR = nltk.data.load('tokenizers/punkt/english.pickle')
+SENT_DETECTOR = nltk.data.load('tokenizers/punkt/german.pickle')
+SENT_DETECTOR = nltk.data.load('tokenizers/punkt/italian.pickle')
+SENT_DETECTOR = nltk.data.load('tokenizers/punkt/french.pickle')
+SENT_DETECTOR = nltk.data.load('tokenizers/punkt/spanish.pickle')
+SENT_DETECTOR = nltk.data.load('tokenizers/punkt/portuguese.pickle')
+SENT_DETECTOR = nltk.data.load('tokenizers/punkt/norwegian.pickle')
+SENT_DETECTOR = nltk.data.load('tokenizers/punkt/greek.pickle')
+SENT_DETECTOR = nltk.data.load('tokenizers/punkt/finnish.pickle')
+SENT_DETECTOR = nltk.data.load('tokenizers/punkt/dutch.pickle')
+SENT_DETECTOR = nltk.data.load('tokenizers/punkt/polish.pickle')
+SENT_DETECTOR = nltk.data.load('tokenizers/punkt/swedish.pickle')
+SENT_DETECTOR = nltk.data.load('tokenizers/punkt/danish.pickle')
+SENT_DETECTOR = nltk.data.load('tokenizers/punkt/czech.pickle')
+SENT_DETECTOR = nltk.data.load('tokenizers/punkt/slovene.pickle')
 
 from src.pipeline import process_book
 from src.utils import get_langs_dict
@@ -94,8 +110,7 @@ if __name__ == '__main__':
         # skip those books.
         try:
             # get PG_id
-            PG_id = filename.split("/")[-1].split("_")[0]
-
+            PG_id = filename.split(os.path.sep)[-1].split("_")[0]
             # get language from metadata
             # default is english
             language = "english"
