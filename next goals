@@ -1,0 +1,13 @@
+use td-idf to get keywords
+implement using dask:
+https://github.com/dask/dask-ml/issues/744
+
+use spacy to plot all keywords on a graph
+
+
+take 1 genre use kmeans to cluster all keywords of that genre
+repeat for all genre
+
+use test data: find keywords and look what centroid is the closest to them
+thats the prediction
+
