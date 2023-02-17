@@ -15,6 +15,8 @@ import os
 import subprocess
 import pickle
 
+# changed save locations
+
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(
@@ -26,14 +28,14 @@ if __name__ == '__main__':
     parser.add_argument(
         "-m", "--mirror",
         help="Path to the mirror folder that will be updated via rsync.",
-        default='data/.mirror/',
+        default='/media/jerome/Bacheler/Gutenbergfiles/data/.mirror/',
         type=str)
 
     # raw dir
     parser.add_argument(
         "-r", "--raw",
         help="Path to the raw folder.",
-        default='data/raw/',
+        default='/media/jerome/Bacheler/Gutenbergfiles/data/raw/',
         type=str)
 
     # metadata dir

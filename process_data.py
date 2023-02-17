@@ -12,22 +12,19 @@ import glob
 import ast
 import pandas as pd
 import nltk
-SENT_DETECTOR = nltk.data.load('tokenizers/punkt/english.pickle')
-SENT_DETECTOR = nltk.data.load('tokenizers/punkt/german.pickle')
-SENT_DETECTOR = nltk.data.load('tokenizers/punkt/italian.pickle')
-SENT_DETECTOR = nltk.data.load('tokenizers/punkt/french.pickle')
-SENT_DETECTOR = nltk.data.load('tokenizers/punkt/spanish.pickle')
-SENT_DETECTOR = nltk.data.load('tokenizers/punkt/portuguese.pickle')
-SENT_DETECTOR = nltk.data.load('tokenizers/punkt/norwegian.pickle')
-SENT_DETECTOR = nltk.data.load('tokenizers/punkt/greek.pickle')
-SENT_DETECTOR = nltk.data.load('tokenizers/punkt/finnish.pickle')
-SENT_DETECTOR = nltk.data.load('tokenizers/punkt/dutch.pickle')
-SENT_DETECTOR = nltk.data.load('tokenizers/punkt/polish.pickle')
-SENT_DETECTOR = nltk.data.load('tokenizers/punkt/swedish.pickle')
-SENT_DETECTOR = nltk.data.load('tokenizers/punkt/danish.pickle')
-SENT_DETECTOR = nltk.data.load('tokenizers/punkt/czech.pickle')
-SENT_DETECTOR = nltk.data.load('tokenizers/punkt/slovene.pickle')
 
+# added SENT_DETECTOR was needed to run on windows
+# changed save locations
+
+#only needed to dowload once
+#nltk.download("punkt")
+
+#init languages for nltk
+languages = ["english","german","italian","french","spanish","portuguese","norwegian","greek","finnish",
+"dutch","polish","swedish","danish","czech","slovene"]
+
+for l in languages:
+    SENT_DETECTOR = nltk.data.load("tokenizers/punkt/"+ l +".pickle")
 from src.pipeline import process_book
 from src.utils import get_langs_dict
 
@@ -41,25 +38,25 @@ if __name__ == '__main__':
     parser.add_argument(
         "-r", "--raw",
         help="Path to the raw-folder",
-        default='data/raw/',
+        default='/media/jerome/Bacheler/Gutenbergfiles/data/raw/',
         type=str)
     # text folder
     parser.add_argument(
         "-ote", "--output_text",
         help="Path to text-output (text_dir)",
-        default='data/text/',
+        default='/media/jerome/Bacheler/Gutenbergfiles/data/text/',
         type=str)
     # tokens folder
     parser.add_argument(
         "-oto", "--output_tokens",
         help="Path to tokens-output (tokens_dir)",
-        default='data/tokens/',
+        default='/media/jerome/Bacheler/Gutenbergfiles/data/tokens/',
         type=str)
     # counts folder
     parser.add_argument(
         "-oco", "--output_counts",
         help="Path to counts-output (counts_dir)",
-        default='data/counts/',
+        default='/media/jerome/Bacheler/Gutenbergfiles/data/counts/',
         type=str)
     # pattern to specify subset of books
     parser.add_argument(

@@ -3,9 +3,12 @@ import pandas as pd
 import numpy as np
 from os import listdir
 
-count_location = "data/counts/"
+data_loc ="/media/jerome/Bacheler/Gutenbergfiles/"
+
+count_location = path.join(data_loc,"data/counts/")
 count_names = np.array(listdir(count_location))
 
+# uncompleted as of now
 
 def load_counts_text(location):
     text = pd.read_csv(location, sep="\t", header=None)
@@ -20,3 +23,5 @@ total_corpus = load_counts_text("total_counts.txt")
 txt = load_counts_text(count_location + count_names[0])
 
 print(total_corpus.sum()[0])
+
+# calc keyness TODO
