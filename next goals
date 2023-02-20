@@ -11,3 +11,11 @@ repeat for all genre
 use test data: find keywords and look what centroid is the closest to them
 thats the prediction
 
+
+tf idf save steps in files
+1. total corpus counts will contain
+word total_count Document_frequency
+
+2. calculate for each PG the tf-idf
+word count_inpg tf-idf
+
