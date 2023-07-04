@@ -1,0 +1,37 @@
+what i have
+1. list containing all words
+2. multiple Pgs containing some words and tf-idf of each word and Pg names
+3. metadata showing all Pgs
+
+all words
+The a k
+
+PG1:
+The a
+1 2
+
+PG2:
+k
+5
+
+PG3:
+The a
+3 4
+
+what i want
+1 sparse matrix
+1 axis all words
+2nd axis all counts of that word in each PG
+
+The a k
+1 2 0	PG1
+0 0 5	PG2
+3 4 0	PG3
+
+
+solution
+loop eahc PG and left join them on "word"
+Problem: may be to large
+may be to slow
+loses Dask properties
+then transform into sparse matrix

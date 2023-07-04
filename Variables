@@ -1,0 +1,26 @@
+metadata:
+id , title, author, authoryearofbirth, authoryearofdeath, language, downloads, subjects, type
+
+id could be tested most likly unrelated
+type should be cleaned
+
+title hard to plot, maybe length?, how many times does the same title appear(data cleaning
+
+author. how many books does each author have on average? do authors write in the same language?  author relative to downloads. Authors write in the same /similiar subjects?
+
+language downloads. most popular language
+
+language subjects, are subjects language dependend?
+download subjects: most popular subjects
+
+subjects: most popular subjects
+
+
+the books themself:
+page count,file size, word amount, average word length,average sentence length,
+
+subjects word amount
+subjects average word length
+subject average sentence length
+
+
